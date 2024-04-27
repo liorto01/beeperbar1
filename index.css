@@ -1,140 +1,264 @@
-
-/* Reset some default styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Body styles */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: 'Assistant', sans-serif;
+  background-color: black;
 }
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 70px; /* Use the height of your fixed or sticky header */
+
+  
+}
+
+/*--------------------navigation bar-------------------*/
+.navbar {
+  position: fixed;
+  top: 0; 
+  background-color: #222; /* Balanced dark gray */
+  width: 100%; 
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+  color: white;
+  z-index: 1000;  
+}
+
+/* Logo image styles */
+.logo img {
+  width: 80px; /* Control the size of the logo here */
+  height: auto;
+}
+
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px; /* Adjusts spacing between nav items */
+  flex: 1; /* Allows nav-links to take the remaining space */
+  justify-content: center; /* Centers nav-links within their space */
+  padding: 0;
+  margin-right: 60px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5em;
+  position: relative; /* Set position relative for the pseudo-element */
+  transition: color 0.3s;
+}
+
+.nav-links li a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px; /* Height of the underline */
+  background: orange; /* Color of the underline */
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: 2px; /* Adjust based on exact positioning of your links */
+  left: 0;
+  right: 0;
+  margin: auto; /* Centers the pseudo-element */
+}
+.nav-links li a:hover, .nav-links li a:focus {
+  color: orange; /* Changes the text color to orange on hover */
+}
+
+
+.nav-links li a:hover::after {
+  width: 100%; /* Full width on hover */
+}
+
+
 
 /* Header styles */
-header {
-  background-image: url('assets/images/Black\ Modern\ Gaming\ YouTube\ Channel\ Art.png'); /* Replace 'your-image.jpg' with your image file name */
-  background-size: cover;
-  background-size: 100%;
-  background-position: center;
-  background-repeat: no-repeat;
-  color: #fff;
-  padding: 200px 0;
-
-}
-.container {
+.header {
+  max-width: 1200px;
+  margin: auto;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-.nav-links1 ul, .nav-links2 ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex; /* Display the list items horizontally */
-}
-
-.logo {
-  
-  padding: 20px 0;
-}
-
-.nav-links1,.nav-links2 ul {
-  
-  list-style: none;
-  
-}
 
 
-.nav-links1 li {
-  display: inline-block;
-  margin-right: 180px;
-  margin-top: 120px;
-}
-.nav-links2 li {
-  display: inline-block;
-  margin-left: 180px;
-  margin-top: 120px;
-  
-}
-
-.nav-links1 a,
-.nav-links2 a {
-  margin-top: 200px;
-  text-decoration: none;
-  color: #fff;
-  font-size: 22px; /* Adjust the font size as needed */
-  font-weight: bold; /* Use a bold font weight for emphasis */
-  padding: 10px 20px; /* Add padding for a larger clickable area */
-  border-radius: 5px; /* Add rounded corners to the links */
-  background-color: #333; /* Set a background color */
-  transition: background-color 0.3s ease, color 0.3s ease;
-}
 
 
-/* Hero section styles */
+/*-------------------- Section 1 - welcome section------------- */
 .hero {
-  background-image: url('hero-image.jpg'); /* Add your hero image here */
-  background-size: cover;
+  position: relative;
   text-align: center;
-  padding: 100px 0;
-  color: black;
-  
+  padding: 180px 0;
+  color: white; /* Ensures text color is white for contrast */
+  overflow: hidden; /* Ensures the pseudo-element does not overflow the bounds of the container */
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: url('assets/images/270847156_247264567534811_1273879887760678670_n.jpg');
+  background-size: cover; /* Covers the entire section */
+  background-position: center; /* Centers the background */
+  filter: grayscale(100%); /* Applies black and white filter */
+  z-index: -1; /* Ensures the background is behind the content */
+}
 .hero h2 {
-  font-size: 50px;
-  margin-bottom: 20px;
+  font-size: 70px; /* Adjust the font size as needed */
+  color: white; /* Text color */
+  text-shadow: 
+    -1px -1px 0 #000,  
+     1px -1px 0 #000,
+    -1px  1px 0 #000,
+     1px  1px 0 #000; /* Creates a bold black outline */
+     margin-bottom: 120px;
 }
 
 .hero-text {
   font-size: 20px;
   margin-bottom: 30px;
+  
 }
 
+
+
+.btn-primary:hover, .btn-secondary:hover {
+  background-color: #333;
+  color: #fff;
+  text-shadow: 0 0 8px rgba(255, 215, 0, 0.7); /* Gold glow around the text */
+  border: 2px solid rgba(255, 215, 0, 0.7); /* Subtle gold border */
+}
+
+.btn-primary, .btn-secondary {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.btn-primary:hover, .btn-secondary:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  background-color: #333;
+}
 .btn-primary {
-  text-align: right;
-  
+  text-align: center;
   padding: 15px 25px;
-  background-color: #FFA500  ;
+  background-color: #DAA520			; /* Gold color */
   color: #333;
   text-decoration: none;
-  border-radius: 20px;
+  border-radius: 2px;
   transition: background-color 0.3s ease;
+  margin-left: 40px; /* Increases space to the right of each button */
+  margin-bottom: 100px;
+ 
+}
+.btn-secondary{
+  text-align: center;
+  padding: 15px 25px;
+  background-color: #DAA520; /* Gold color */
+  color: #333;
+  text-decoration: none;
+  border-radius: 1px;
+  transition: background-color 0.3s ease;
+  margin-right: 40px; /* Increases space to the right of each button */
+ 
 }
 
-.btn-primary:hover {
+
+
+.btn-primary:hover,.btn-secondary:hover {
   
   background-color: #333;
   color: #fff;
+  
 }
 
-/* Section styles (Menu, Hours, Photos) */
+
+/* -----------Section 2- craft a beer----------   */
 .container {
-  text-align: center;
+  overflow: visible;
   max-width: 1200px;
   margin:auto;
   padding: 40px;
   display: flex;
   justify-content: space-between;
+   
   
-  
-  
-  
-}
-.menu, .hours, .photos {
-  background-color: #fff;
-  margin-bottom: 10px;
-  border-radius: 5px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  text-align: center;
-  justify-content: space-between;
-  display: block;
-  
+  padding-top: 20px;
+
 }
 
+
+
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: left;
+  color: #fff;
+  height: 90vh;
+
+  background-color: black; /* Dark background */
+}
+
+.content {
+  max-width: 600px; /* Or adjust the width as needed */
+  margin: 20px;
+}
+
+.image-container {
+  position: relative;
+  overflow: hidden; /* To contain the image within the bounds of the container */
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 100%; /* To ensure the image is responsive and fits its container */
+  display: block; /* To remove any space below the image */
+ 
+}
+
+button {
+  background-color: black; /* Black background */
+  color: white; /* White text */
+  border: 2px solid #DAA520; /* Gold borders */
+  padding: 10px 20px;
+  border-radius: 0px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px; /* Adjust as needed */
+}
+
+button:hover {
+  background-color: #DAA520; /* Gold background on hover */
+  color: black; /* Black text on hover */
+}
+
+
+/* Additional responsive adjustments as needed */
+@media (max-width: 768px) {
+  .container {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .image-container {
+      width: 100%;
+      order: -1; /* Image above the text on smaller screens */
+  }
+
+  .content {
+      max-width: 100%;
+  }
+}
 .info{
   max-width: 1200px;
   margin: 0 auto;
@@ -147,7 +271,59 @@ header {
   justify-content: space-between;
   display: block;
 }
+.interactive-item {
+  cursor: pointer;
+  transform: scale(1.03); /* Slightly larger but not too much */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Softer shadow */
+  border: 1px solid #cccccc; /* Softer border */
+  position: relative;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover */
+}
 
+.interactive-item:hover {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3); /* Slightly larger shadow on hover */
+  transform: scale(1.05); /* Subtle scale up on hover */
+  z-index: 10; /* Ensure the scaled item is above other content */
+
+}
+.next-section { /* Replace with the actual class of your next section */
+  padding-top: 50px; /* Add more padding to the top of the next section */
+}
+
+.icon-container {
+  scale: 30%;
+ /* Adjust the container's width */
+  height: 1px; /* Adjust the container's height */
+  position: absolute;
+  right: 1px;
+  top: 1px;
+}
+
+
+.interactive-icon {
+  width: 1px; /* Set a specific width */
+  height: 1px; /* Set a specific height to match the width */
+  /* If the icon is an SVG, you may not need to set the height separately */
+}
+
+@keyframes pulse {
+  0% {
+      transform: scale(1);
+      opacity: 1;
+  }
+  50% {
+      transform: scale(1.05);
+      opacity: 0.7;
+  }
+  100% {
+      transform: scale(1);
+      opacity: 1;
+  }
+}
+
+.interactive-item {
+  animation: pulse 2s infinite;
+}
 
 
 .menu h2, .hours h2, .photos h2 {
@@ -155,33 +331,66 @@ header {
   font-size: 28px;
   padding: 20px 0;
 }
-.hours-table {
-  height: 20px; /* Add a 20px gap below the table */
-  width: 40%; /* Adjust the width as needed */
-  margin: 0 auto; /* Center the table horizontally by adding margin */
-  border-collapse: collapse;
-  margin-bottom: 20px !important;
-  background-color: white;
-}
-.hours-table:after {
-  content: "";
-  display: block;
-  height: 20px; /* Add a 20px gap below the table */
-}
+/* Section styles for 'hours' */
 
-
-.hours-table th, .hours-table td {
-  border: 2px solid #ddd;
-  padding: 10px;
+.flavor-section {
   text-align: center;
+  background-color: #f8f8f8; /* Light background for the section */
+  padding: 40px;
 }
 
-.gallery-image {
-  max-width: 300px; /* Adjust the maximum width as needed */
-  max-height: 250px; /* Adjust the maximum height as needed */
-  margin-bottom: 50px;
+.flavor-section h2 {
+  font-size: 24px;
+  color: #333;
+  margin-bottom: 20px;
 }
 
+.flavor-section p {
+  font-size: 16px;
+  color: #666;
+  margin-bottom: 30px;
+}
+
+.flavor-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 0.6fr));
+  gap: 20px; /* Adjust the gap as needed */
+  padding: 0;
+  margin: 0 auto; /* Centers the grid */
+  max-width: 1100px; /* Maximum width or adjust as necessary */
+  
+
+}
+.flavor-item {
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 50px; /* Add extra space to accommodate for the scale on hover */
+  /* Remove the width and margin-left/right from .flavor-item */
+  /* The size is now controlled by the grid-template-columns */
+}
+
+
+.flavor-item img {
+  display: block;
+  width: 100%; /* Full width of the container */
+  height: 200px; /* Fixed height for all images */
+  object-fit: cover; /* Cover the area without stretching */
+}
+.flavor-item h3 {
+  font-size: 18px;
+  color: #333;
+  padding: 10px 15px;
+  background-color: #eaeaea;
+  
+}
+
+
+.flavor-item p {
+  font-size: 14px;
+  color: #666;
+  padding: 15px; /* Add padding to maintain consistency */
+}
 /* Footer styles */
 footer {
   background-color: #333;
@@ -198,3 +407,264 @@ footer a {
 footer a:hover {
   color: #fff;
 }
+* {
+  box-sizing: border-box;
+}
+
+
+
+.contact-section {
+  flex: 1;
+
+  display: flex;
+  justify-content: space-between;
+  padding: 40px 0;
+}
+
+.contact-form, .contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  background: #fff;
+  padding: 20px;
+  margin: 10px;
+}
+
+.contact-form {
+  width: 40%;
+  border: 1px solid #ddd;
+}
+
+.contact-form h2, .contact-info h3 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.contact-form p, .contact-info p, .contact-info a {
+  color: #666;
+  margin-bottom: 10px;
+}
+
+input[type="text"], input[type="email"], input[type="tel"], textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  background: #f9f9f9;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+
+
+button[type="submit"] {
+  background-color: #333;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  font-size: 16px;
+}
+
+.map-error {
+  padding: 10px;
+  background-color: #fbe3e4;
+  border-left: 3px solid #d9534f;
+  color: #d9534f;
+  margin-bottom: 20px;
+}
+
+.contact-info {
+  width: 60%;
+  border-left: 4px solid black;
+}
+
+.contact-info .map-error {
+  margin-bottom: 20px;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 10px;
+  background: #fff;
+  margin: 10px;
+}
+
+.footer-links div {
+  margin-right: 15px;
+}
+
+.footer-links h3 {
+  margin-bottom: 10px;
+}
+
+.footer-links ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+
+.footer-links ul li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+  margin-bottom: 5px;
+}
+
+.footer-links ul li a:hover {
+  text-decoration: underline;
+}
+
+.contact-us p {
+  display: flex;
+  align-items: center;
+  margin-bottom: 5px;
+  padding-left: 10px; /* Adjust as needed */
+}
+
+.contact-us p i {
+  margin-right: 5px; /* Space between icon and text */
+  margin-left: -15px; /* Adjust this value as needed to shift icon to the left */
+}
+
+.footer-links .contact-us p i {
+  position: relative;
+  left: -10px;
+}
+
+.footer-links .contact-us p {
+  
+  margin-bottom: 5px;
+  padding-left: 30px; /* Added padding to prevent text overlap */ 
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 980px) {
+  .contact-section {
+    flex-direction: column;
+  }
+
+  .contact-form,
+  .contact-info {
+    width: 90%;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .footer-links div {
+    margin-bottom: 20px;
+  }
+
+}
+.content-wrapper {
+  flex: 1; /* Makes sure the content section grows to take available space */
+}
+.footer-section {
+  position:relative;
+  width: 100%;
+
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #f0e6d2;
+  padding: 20px;
+}
+
+.footer-brand img {
+  width: 120px; /* Adjust as needed */
+  margin-left: 50px;
+}
+.footer-section {
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #333;
+  color: #f0e6d2;
+  padding: 20px;
+}
+
+.footer-brand {
+  /* assuming .footer-brand is the class for the logo section */
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+.footer-links-container {
+  flex: 2; /* This gives more space to the container holding the Quick links */
+  display: flex;
+  justify-content: space-around; /* This will space out the child elements evenly */
+}
+
+.footer-links-down, .contact-us {
+  /* assuming these are the classes for the quick links and contact sections */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.footer-links-down h3, .contact-us h3 {
+  margin-bottom: 10px;
+}
+.contact-us p {
+  margin-bottom: 0.25em; /* Adjust the spacing between the paragraphs as needed */
+  display: flex;
+  align-items: center; /* This helps vertically align icons with the text if you're using them */
+}
+
+.footer-links-down ul {
+  list-style-type: none;
+  padding: 0;
+  text-align: center;
+}
+.contact-section {
+  flex: 1;
+}
+
+
+.footer-links-down ul li a {
+  color: #f0e6d2;
+  text-decoration: none;
+  margin-bottom: 5px;
+}
+
+.footer-links-down ul li a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .footer-section {
+    flex-direction: column;
+  }
+
+  .footer-links-container {
+    order: 2; /* Move the links below the logo */
+  }
+
+  .footer-brand, .footer-links-down, .contact-us {
+    flex: none;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+}
+
