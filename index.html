@@ -1,80 +1,160 @@
 <!DOCTYPE html>
-<link rel="stylesheet" href="index.css">
-
 <html lang="en">
-
-
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;700&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="index.css">
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <title>Beeper Bar</title>
+    </head>
 <body>
     <header>
-        <nav class="navbar">
-            <div class="container">
-                <h1 class="logo"><a href="#home"></a></h1>
-                <ul class="nav-links1">
-                    <li><a href="#home">ראשי</a></li>
-                    <li><a href="assets/images/תפריט ביפר מעודכן.pdf" target="pdfFrame">תפריט</a></li>
-                </ul>
-                <ul class="nav-links2">
-                    <li><a href="#hours">שעות</a></li>
-                    <li><a href="#photos" >תמונות</a></li>
-                </ul>
-            </div>
-        </nav>
-    </header>
+        <nav class="navbar"> 
+          <div class="header">
+            <h1 class="logo">
+              <img src="assets/תפריט-veed-remove-background.png" alt="Logo" class="logo-img">
+            </h1>
+        <ul class="nav-links">
+          <li><a href="#home">ראשי</a></li>
+          <li><a href="assets/images/תפריט ביפר מעודכן.pdf" target="_blank">תפריט</a></li>
+          <li><a href="#contact-section">שעות</a></li>
+          <li><a href="#flavor-section">תמונות</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  <section id="home" class="hero">
+    <h2> ברוכים הבאים</h2>
+   
+    </div>
+    <a href="assets/images/תפריט ביפר מעודכן.pdf" target="_blank" class="btn btn-primary">הצג תפריט</a>
+    <a href="assets/images/תפריט ביפר מעודכן.pdf" target="_blank" class="btn btn-secondary">הזמן שולחן</a></a>
+</section>
 
-    <section id="home" class="hero">
-        <div class="">
-            <h2>ברוכים הבאים </h2>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <h1>Craft beer</h1>
+            <h2>Discover the finest selection of craft beers in town.</h2>
+            <p>At Beeper Bar, we take pride in offering a diverse range of craft beers from local and international breweries. Located in Ramat Ishay, our bar is the perfect place to gather with friends and explore unique, flavorful brews. Whether you're an ale aficionado or a lager lover, we have something for every beer enthusiast. Join us for a memorable beer-tasting experience that celebrates the art of brewing.</p>
+            <button onclick="location.href='#'">Get in touch</button>
         </div>
-            <div class="container">
-            
-        </div>
-            <a href="assets/images/תפריט ביפר מעודכן.pdf"target="_blank" class="btn btn-primary">הצג תפריט</a>
-       
-    </section>
-
-
-
-    <section id="hours" class="hours">
-        <div class="info">
-            <h2>שעות פעילות</h2>
-        </div>
-            <div class="info">
-            <p>שעות הפעילות משתנות בהתאם לליינים המפורסם בדף הפייסבוק</p>
-            </div>
-            <table class="hours-table">
-                <tr>
-                    <th>יום</th>
-                    <th>שעות פעילות</th>
-                </tr>
-                <tr>
-                    <td>חמישי</td>
-                    <td>21:00- 2:00 </td>
-                </tr>
-                <!-- Add the rest of the days and hours here -->
-            </table>
-        </div>
-    </section>
-
-    <section id="photos" class="photos">
-        <div class="info">
-            <h2>תמונות</h2>
-            
-            <!-- Include image thumbnails or a gallery here -->
-        </div>
-        <div class="photo-gallery">
-            <img src="assets/images/270847156_247264567534811_1273879887760678670_n.jpg" alt="Photo 1" class="gallery-image">
-            <img src="assets/images/330847774_627136072509374_3418850472236418619_n.jpg" alt="Photo 2" class="gallery-image">
-            <img src="assets/images/330955006_3403749629892899_338562334955777709_n.jpg" alt="Photo 3" class="gallery-image">
-        </div>
-    
-    </section>
-    
-
-    <footer>
-        <div class="container">
-            <p>Contact for web design <a href="mailto:info@yourbar.com">liorto01@gmail.com</a></p>
-            <p>&copy; 2023 JeFa. All rights reserved.</p>
-        </div>
-    </footer>
+        
+        <div class="image-container">
+            <img src="assets/images/330847774_627136072509374_3418850472236418619_n.jpg" alt="Bar Scene" class="hero-image">
+          </div>
+    </div>
 </body>
+</html>
+
+<div class="flavor-section" id="flavor-section">
+    <h2>Discover a world of flavors</h2>
+    <p>Indulge in a diverse selection of handcrafted beers from local and international breweries. From hoppy IPAs to rich stouts, there's a beer for every palate waiting to be savored at Beeper Bar.</p>
+    <div class="flavor-grid">
+        <div class="flavor-item">
+            <img src="assets/images/beers.jpg" alt="Craft Beer Selection">
+            <h3>Craft beer selection</h3>
+            <p>Discover a wide range of unique craft beers from local and international breweries.</p>
+        </div>
+        <div class="flavor-item">
+            <img src="assets/images/330847774_627136072509374_3418850472236418619_n.jpg" alt="Live Music Events">
+            <h3>Live music events</h3>
+            <p>Experience the thrill of live music performances by talented local artists.</p>
+        </div>
+        <div class="flavor-item">
+            <img src="assets/images/burgers.jpg" alt="beer and food pairing">
+           <h3>Beer and food pairing</h3>
+           <p>Indulge in a delightful culinary experience with expertly paired beers and dishe</p>
+        </div>
+        <div class="flavor-item">
+            <img src="assets/images/events.jpg" alt="Events & Celebrations">
+           <h3>Events & Celebrations</h3>
+           <p>Our venue is the perfect setting for all your special events. From lively birthday parties to elegant corporate gatherings, we make every occasion unforgettable</p>
+        </div>
+        <div class="flavor-item">
+            <img src="assets/images/food.jpg" alt="Gourmet Bites">
+           <h3>Gourmet Bites</h3>
+           <p>Pair your craft beer with our selection of gourmet bites, made from fresh, locally-sourced ingredients.</p>
+        </div>
+
+        <div class="flavor-item interactive-item" id="special-feature">
+            <img src="assets/images/beeperOutside.jpg" alt="Discover More">
+            <h3>Discover More</h3>
+            <p>Click to see what's new!</p>
+            <div class="icon-container">
+                <img src="assets/images/99173.png" alt="Click me" class="interactive-icon">
+            </div>
+        </div>
+       
+    </div>
+
+ 
+   
+<div class="contact-section" id="contact-section">
+  <div class="contact-form">
+    <h2>Get in touch</h2>
+    <p>We'd love to hear from you</p>
+    <form action="#" method="post">
+      <label for="name">Name*</label>
+      <input type="text" id="name" name="name" required>
+      
+      <label for="email">Email address*</label>
+      <input type="email" id="email" name="email" required>
+      
+      <label for="phone">Phone number</label>
+      <input type="tel" id="phone" name="phone">
+      
+      <label for="message">Message</label>
+      <textarea id="message" name="message"></textarea>
+      
+      <div class="checkbox-container">
+        <input type="checkbox" id="consent" name="consent">
+        <label for="consent">I allow this website to store my submission so they can respond to my inquiry.</label>
+      </div>
+      
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  
+  <div class="contact-info" >
+
+    <div class="map-error">
+      <p>We are unable to show a map because the location is not a full or incorrect. Please check your address details and try again.</p>
+    </div>
+    
+    <div class="contact-details">
+      <h3><i class="fas fa-map-marker-alt"></i> Location</h3>
+      <p>123 Beeper Street, Town</p>
+      <h3><i class="fas fa-clock"></i> Hours</h3>
+      <p>Monday - Sunday: 9am - 10pm</p>
+    </div>
+  </div>
+</div>
+  
+
+<div class="footer-section">
+    <div class="footer-brand">
+      <img src="assets/תפריט-veed-remove-background.png" alt="Reffer Logo">
+    </div>
+    
+    <div class="footer-links-container">
+      <div class="footer-links-down">
+        <h3>Quick links</h3>
+        <ul>
+          <li><a href="#">Services</a></li>
+          <li><a href="#">Schedule Appointment</a></li>
+          <li><a href="#">Complete Intake</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      
+      <div class="contact-us">
+        <h3>Contact us</h3>
+        <p><i class="fas fa-map-marker-alt"></i>  Ramat Ishay, TAL IL</p>
+        <p><i class="fas fa-envelope"></i>  lioritoo01@gmail.com</p>
+      </div>
+    </div>
+  </div>
 
